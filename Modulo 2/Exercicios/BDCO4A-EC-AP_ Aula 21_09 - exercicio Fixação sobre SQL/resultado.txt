@@ -1,0 +1,39 @@
+1) Buscar todos os dados da tabela Jogadores 
+SELECT * FROM JOGADORES;
+
+2) Buscar todos os dados da tabela Torneios
+SELECT * FROM TORNEIOS;
+ 
+3) Buscar todos os dados da tabela Lista de Torneios 
+SELECT * FROM LISTA_TORNEIOS;
+
+4) Buscar o Pnome, Nome e pais de todos os jogadores (Tabela Jogadores) 
+SELECT Pnome, Nome, pais FROM JOGADORES;
+
+5) Buscar Pnome, Nome e Pais dos Jogadores que são dos EUA.
+SELECT Pnome, Nome, Pais FROM JOGADORES WHERE Pais='EUA';
+
+6) Buscar o Pnome e Nome do Jogador com maior numero de Vitorias (comando Max)
+
+6.1) Listar  o Pnome e Nome dos Jogadores, ordenados pelo numero de vitorias em ordem crescente
+SELECT Pnome, Nome FROM JOGADORES ORDER BY vits;
+
+7) idem ao anterior mas em ordem decrescente.
+SELECT Pnome, Nome FROM JOGADORES ORDER BY vits DESC;
+
+8) Buscar na tabela Lista_torneios o nome torneio com Quadra = D e pais = EUA
+SELECT nomet FROM LISTA_TORNEIOS WHERE quadra='D' AND pais='EUA';
+
+9)  Listar todos os jogadores que tem mais de 500 vitorias ou nascidos após os anos 80.
+SELECT * FROM JOGADORES WHERE vits>500 OR ano_n>80;
+
+10)  Listar todos  os jogadores que tem entre 100  e 200 vitorias ordenados pelo numero de vitorias
+SELECT * FROM JOGADORES WHERE vits BETWEEN 100 AND 200;
+
+11) Usar a clausula distinct  para listar todos os paises da tabela Jogadores. 
+SELECT DISTINCT pais FROM JOGADORES;
+
+11.1) SELECT sum(vits), pais FROM JOGADORES group by pais order by sum(vits);
+
+12) Listar o somatorio dos premios agrupados por jogadores, ordenados em ordem crescente (tabela Torneios)
+SELECT sum(premio), numj FROM TORNEIOS group by numj order by sum(premio);
