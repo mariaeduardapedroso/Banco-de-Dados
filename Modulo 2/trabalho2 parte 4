@@ -1,0 +1,40 @@
+##Exercício 1: Proceda as seguintes alterações e exclusões nos dados para o BD Clínica.
+1) O paciente Paulo mudou-se para Ilhota
+2) A consulta do médico 1 com o paciente 4  passou para às 12:00 horas do dia 4 de Julho de 2006
+3) A paciente Ana fez aniversário e sua doença agora é cancer
+4) A consulta do médico Pedro (codf = 3) com o paciente Carlos (codf = 4) passou para uma hora e meia depois
+5) O funcionário Carlos (codf = 4) deixou a clínica
+6) As consultas marcadas após as 19 horas foram canceladas
+7) Os pacientes com câncer ou idade inferior a 10 anos deixaram a clínica
+8) Os médicos que residem em Biguacu e Palhoca deixaram a clínica
+
+
+Exercício 2: Proceda as seguintes seleções nos dados para o BD Clínica.
+1) Buscar o nome e o CPF dos médicos com menos de 40 anos ou com especialidade diferente de traumatologia 
+2) Buscar todos os dados das consultas marcadas no período da tarde após o dia 19/06/2006
+3) Buscar o nome e a idade dos pacientes que não residem em Florianópolis
+4) Buscar a hora das consultas marcadas antes do dia 14/06/2006 e depois do dia 20/06/2006
+5) Buscar o nome e a idade (em meses) dos pacientes
+6) Em quais cidades residem os funcionários?
+7) Qual o menor e o maior salário dos funcionários da Florianópolis?
+10) Qual o horário da última consulta marcada para o dia 13/06/2006?
+11) Qual a média de idade dos médicos e o total de ambulatórios atendidos por eles?
+12) Buscar o código, o nome e o salário líquido dos funcionários. O salário líquido é obtido pela diferença entre o salário cadastrado menos 20% deste mesmo salário
+13) Buscar o nome dos funcionários que terminam com a letra “a”
+14) Buscar o nome e CPF dos funcionários que não possuam a seqüência “00000” em seus CPFs
+15) Buscar o nome e a especialidade dos médicos cuja segunda e a última letra de seus nomes seja a letra “o”
+16) Buscar os códigos e nomes dos pacientes com mais de 25 anos que estão com tendinite, fratura, gripe e sarampo
+
+
+Exercício 3: Proceda as seguintes seleções utilizando Junções para os dados do BD Clínica.
+1) nome e CPF dos médicos que também são pacientes do hospital
+2) pares (código, nome) de funcionários e de médicos que residem na mesma cidade
+3) código e nome dos pacientes com consulta marcada para horários após às 14 horas 
+4) número e andar dos ambulatórios utilizados por médicos ortopedistas
+5) nome e CPF dos pacientes que têm consultas marcadas entre os dias 14 e 16 de junho de 2006
+6) nome e idade dos médicos que têm consulta com a paciente Ana
+7) código e nome dos médicos que atendem no mesmo ambulatório do médico Pedro e que possuem consultas marcadas para dia 14/06/2006
+8) nome, CPF e idade dos pacientes que têm consultas marcadas com ortopedistas para dias anteriores ao dia 16
+9) nome e salário dos funcionários que moram na mesma cidade do funcionário Carlos e possuem salário superior ao dele
+10) dados de todos os ambulatórios e, para aqueles ambulatórios onde médicos dão atendimento, exibir também os seus códigos e nomes
+11) CPF e nome de todos os médicos e, para aqueles médicos com consultas marcadas, exibir os CPFs e nomes dos seus pacientes e as datas das consultas
