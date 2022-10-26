@@ -1,0 +1,117 @@
+####################################################################################################################
+                                                  STORE PROCEDURE
+                                                  
+####################################################EXERCICIO 1#####################################################
+C:\Users\a2150336>my sql -u root
+'my' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\Users\a2150336>mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database bd_trab3;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use bd_trab3;
+Database changed
+
+mysql> create table funcionarios(cpf integer, nome varchar(15));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_bd_trab3 |
++--------------------+
+| funcionarios       |
++--------------------+
+1 row in set (0.03 sec)
+
+mysql> delimiter $$
+mysql> create procedure inserirDados(in cpfpassado integer, in nomepassado varchar(15))
+    -> begin
+    -> insert into funcionarios (cpf,nome) values (cpfpassado,nomepassado);
+    -> end $$
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+
+
+mysql> call inserirDados(463938,"maria");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from funcionarios;
++--------+-------+
+| cpf    | nome  |
++--------+-------+
+| 463938 | maria |
++--------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from funcionarios;
++--------+-------+
+| cpf    | nome  |
++--------+-------+
+| 463938 | maria |
++--------+-------+
+1 row in set (0.00 sec)
+
+mysql> explain select * from funcionarios;
++----+-------------+--------------+------------+------+---------------+------+---------+------+------+----------+-------+
+| id | select_type | table        | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |
++----+-------------+--------------+------------+------+---------------+------+---------+------+------+----------+-------+
+|  1 | SIMPLE      | funcionarios | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    1 |   100.00 | NULL  |
++----+-------------+--------------+------------+------+---------------+------+---------+------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+####################################################EXERCICIO 2#####################################################
+(CORRETO) Uma Stored Procedure é executada no lado do servidor e seu plano de execução fica na memória, agilizando as próximas chamadas.
+
+(CORRETO) Stored Procedure podem receber um ou mais parâmetros formais de entrada (input) e podem retornar diversos valores como parâmetro de saída (output).
+
+(CORRETO) Stored Procedure são compilados e armazenados no lado do servidor de banco de dados.
+
+####################################################EXERCICIO 3#####################################################
+(   ) JavaScript, que encapsulam tarefas repetitivas, aceitam parâmetros de entrada e retornam valores correspondentes à execução dos comandos JavaScipt.
+
+(   ) JavaScript, que não encapsulam tarefas repetitivas, aceitam parâmetros de entrada e não retornam valores correspondentes à execução dos comandos SQL.
+
+(   ) SQL, que encapsulam tarefas únicas, não aceitam parâmetros de entrada e retornam valores correspondentes à execução dos comandos SQL.
+
+( X ) SQL, que encapsulam tarefas repetitivas, aceitam parâmetros de entrada e retornam valores correspondentes à execução dos comandos SQL.
+
+(    ) SQL, que não encapsulam tarefas repetitivas, aceitam parâmetros de entrada e não retornam valores correspondentes à execução dos comandos SQL.
+####################################################################################################################
+                                                      TRIGGER
+                                                      
+####################################################EXERCICIO 4#####################################################
+
+####################################################EXERCICIO 5#####################################################
+
+####################################################EXERCICIO 6#####################################################
+(CORRETA) Trigger como a tradução se faz, são gatilhos, o gatilho ocorre toda vez que uma ação ocorre em um banco de dados. O Trigger é conseqüência de uma ação, portanto não é o fim e sim algo que ocorre em função de uma ação.
+
+(CORRETA)  Os bancos de dados prevêem que caso haja uma ação de modificação podemos ter ações complementares vinculadas a mesma, que é o que chamamos de Trigger
+
+(CORRETA) Triggers podem ocorrer (BEFORE) antes ou (AFTER) depois que a ação tenha ocorrido, e por fim pode ocorrer para as ações de INSERT, UPDATE, DELETE e SELECT em uma tabela.
+
+(CORRETA) Os Triggers podem ser do tipo ROW LEVEL ( Linha) ou STATEMENT (Tabela).
+
+####################################################EXERCICIO 7#####################################################
+(   ) eventos enviados automaticamente pelo banco de dados em resposta à execução de uma procedure.
+
+(   ) objetos que executam tarefas na medida que as aplicações interagem com o banco de dados.
+
+(   ) objetos que executam tarefas e retornam um valor associado a sua operação.
+
+( X ) objetos armazenados que são automaticamente executados em resposta à execução de algum evento.
+
+(   ) funções e procedures unidos em uma sequência de comandos contínuos e progressivos.
