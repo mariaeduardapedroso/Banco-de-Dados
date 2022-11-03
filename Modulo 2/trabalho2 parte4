@@ -1,0 +1,30 @@
+##########################EXERCÍCIO 01#################################
+1) UPDATE pacientes set cidade = 'Ilhotas' WHERE nome = 'Paulo';
+2) update consultas set hora = 120000, data = 20060704 where codm = 1 and
+codp = 4;
+3) update pacientes set idade = idade + 1, doenca = 'Cancer' where nome =
+'Ana';
+4) update consultas set hora = hora + 013000 where codm = 3 and codp = 4;
+5) DELETE from medicos where codm = 4;
+6) delete from consultas where hora>190000;
+7) DELETE from pacientes where doenca = 'Cancer' or idade<10;
+8) DELETE from medicos where cidade = 'Biguacu' or cidade = 'Palhoca';
+##########################EXERCÍCIO 02#################################
+01) select nome, cpf from medicos where idade<40 or especialidade <>
+'traumatologia';
+02) select * from consultas where hora>=120000 and data>20060619;
+03) select nome, idade from pacientes where cidade <> 'Florianopolis';
+04) select hora from consultas where data<20060614 or data>20060620;
+05) select nome, idade from pacientes;
+06) select nome, cidade from funcionarios;
+07) select max(salario), min(salario) from funcionarios;
+10) select max(hora) as 'Ultima Consulta' from consultas where data =
+20060613;
+11) select avg(idade) as 'Media de idade', count(nroa) from medicos;
+12) select codf, nome, salario*0.8 as 'Salario liquido' from funcionarios;
+13) select nome from funcionarios where nome like'%A';
+14) select nome, cpf from funcionarios where cpf like '%00000%';
+15) select nome, especialidade from medicos where nome like '_a%' and
+nome like '%a';
+16) select codp, nome from pacientes where idade>25 and doenca =
+"tendinite" or doenca "fratura" or doenca = "gripe" or doenca = "sarampo";
