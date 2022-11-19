@@ -1,0 +1,18 @@
+1) Qual o comando para habilitar ou desabilitar o COMMIT automático no MySQL?
+Para forçar MySQL a não executar commit automaticamente, usamos:
+SET autocommit = 0;
+# ou
+SET autocommit = OFF
+Para habilitar novamente o autocommit usamos:
+SET autocommit = 1;
+# ou
+SET autocommit = ON;
+
+2) Qual comando para verificar se o COMMIT automático está ativado ou desativado no MYSQL?
+SELECT @@autocommit; Se for retornado um valor igual a 0 (zero), isso significa que o autocommit está desativado; um valor igual a 1 indica status de autocommit ativo.
+
+3) No MYSQL qual o comando para iniciar uma transação?
+START TRANSACTION;
+
+4) No MYSQL qual comando desfaz todas os comandos de uma transação?
+ROLLBACK
