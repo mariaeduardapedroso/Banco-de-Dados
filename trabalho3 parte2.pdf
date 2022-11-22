@@ -1,0 +1,19 @@
+1)  No vídeo, quais são as duas técnicas de controle de concorrências apresentadas? Explique resumidamente cada uma delas.
+
+2) Sobre os níveis de isolamento responda.
+
+     a). Quanto maior o nível de isolamento,  o nível de acesso concorrente é menor ou maior? Explique.
+
+     b) Explique como funciona o nivel de ISolamento Read Commited.
+
+     c) Entre os níveis de isolamento apresentados no vídeo, qual é o mais restritivo. Explique detalhes sobre esse nível  e quais os impactos em relação a desempenho atrelados a isto. 
+
+3) Quando o profissional de banco de dados  escolhe um nível de isolamento, o que se deve levar em consideração? 
+
+4) O comando do Mysql Lock Tables, bloqueia os dados para leitura ou para escrita?
+
+5) Ao utilizar o  comando do Mysql Lock Tables, o que ocorre se alguma outra transação fizer um update na mesma tabela, será efetivado o update ? Justifique 
+
+6) Ao utilizar o bloqueio manual (comando Lock), é necessário desbloquear a tabela ao final do processo? Justifique.
+
+7) O que é o problema de Deadlock e caso ocorra, qual a solução?
