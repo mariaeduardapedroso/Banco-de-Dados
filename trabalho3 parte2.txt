@@ -1,19 +1,31 @@
 1)  No vídeo, quais são as duas técnicas de controle de concorrências apresentadas? Explique resumidamente cada uma delas.
+-Multiversão: cada transação tem acesso a uma versão do banco de dados e não permite visualização de dados inconsistentes transação apenas tem acesso a dadosconsistentes confirmados pelo banco
+-Bloqueio: permite alteração nos dados apenas em uma transação, e bloqueia os dados ate que uma transação seja concluida.
 
 2) Sobre os níveis de isolamento responda.
 
-     a). Quanto maior o nível de isolamento,  o nível de acesso concorrente é menor ou maior? Explique.
+     a). Quanto maior o nível de isolamento,  o nível de acesso concorrente é menor       ou maior? Explique.
+      Quanto maior o nivel de isolamento menos o nivel de acesso concorrente, pois       eles são inversos se você isola mais o nivel de acesso diminui.
 
-     b) Explique como funciona o nivel de ISolamento Read Commited.
+     b) Explique como funciona o nivel de Isolamento Read Commited.
+     READ COMMITTED é o nível de isolamento padrão para o SQL Server. Ele impede a      realização de leituras sujas especificando que as instruções não podem ler          valores de dados que foram modificados, mas ainda não confirmados por outras        transações.
 
-     c) Entre os níveis de isolamento apresentados no vídeo, qual é o mais restritivo. Explique detalhes sobre esse nível  e quais os impactos em relação a desempenho atrelados a isto. 
+     c) Entre os níveis de isolamento apresentados no vídeo, qual é o mais               restritivo. Explique detalhes sobre esse nível  e quais os impactos em             relação a desempenho atrelados a isto. 
+      Serializable é o mais restritivo, o maior nivel de isolamento organiza as           transações em sequencia, então é impossivel ter transaçoes acontecendo ao           mesmo tempo devido ao bloqueio das tableas diminuindo o desempenho do banco         de dados.
 
 3) Quando o profissional de banco de dados  escolhe um nível de isolamento, o que se deve levar em consideração? 
+Deve levar em consideração o que ele precisa para o sistema dele, caso não necessite de um bloqueio muito alto não tem porque utilizar um nivel alto e diminuir o desempenho do banco.
 
 4) O comando do Mysql Lock Tables, bloqueia os dados para leitura ou para escrita?
+LOCK TABLES pode fazer os dois tipos de lock:
+LOCK TABLES READ: bloqueia para leitura e permite ler uma tabela bloqueada. Multiplas sessões podem usar esse lock ou mesmo tempo.
+LOCK TABLES WRITE: bloqueia para alterações. Somente uma sessão pode executar esse bloqueio por vez.
 
 5) Ao utilizar o  comando do Mysql Lock Tables, o que ocorre se alguma outra transação fizer um update na mesma tabela, será efetivado o update ? Justifique 
+Não será efetivado, pois ele tem um nivel muito alto de isolamento, bloqueando a tabela até a primeira transação acabar.
 
 6) Ao utilizar o bloqueio manual (comando Lock), é necessário desbloquear a tabela ao final do processo? Justifique.
+Sim, é necessario pois esse comando é parecido com o nivel serializible, garantindo que as trnsações serão sequenciais.
 
 7) O que é o problema de Deadlock e caso ocorra, qual a solução?
+Deadlock é um problema potencial em qualquer sistema operacional. Um estado de deadlock ocorre quando dois ou mais processos estão esperando indefinidamente por um evento que só pode ocorrer por um dos processos em espera.
